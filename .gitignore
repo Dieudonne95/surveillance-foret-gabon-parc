@@ -1,0 +1,10 @@
+.streamlit/secrets.toml
+*.pyc
+__pycache__/
+.env
+venv/
+*.key
+*.json
+carte_*.html
+Rapport_*.txt
+*.csv
