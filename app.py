@@ -6,9 +6,7 @@ import folium
 from streamlit_folium import st_folium
 from datetime import datetime
 
-# =============================================================================
-# 🔐 AUTHENTIFICATION EARTH ENGINE - VERSION STREAMLIT CLOUD
-# =============================================================================
+# AUTHENTIFICATION EARTH ENGINE - VERSION STREAMLIT CLOUD
 
 import json
 
@@ -30,17 +28,17 @@ def init_ee():
             )
             
             ee.Initialize(credentials=credentials, project=project_id)
-            st.success("✅ Connecté à Earth Engine (Cloud)")
+            st.success("Connecté à Earth Engine (Cloud)")
             return True
         else:
             # Fallback pour test local
             ee.Initialize(project='conservation-projet')
-            st.success("✅ Connecté à Earth Engine (Local)")
+            st.success("Connecté à Earth Engine (Local)")
             return True
             
     except Exception as e:
-        st.error(f"❌ Erreur de connexion Earth Engine : {e}")
-        st.info("💡 Vérifiez les secrets dans Streamlit Cloud")
+        st.error(f"Erreur de connexion Earth Engine : {e}")
+        st.info("Vérifiez les secrets dans Streamlit Cloud")
         return False
 
 # Initialiser au démarrage
@@ -400,5 +398,6 @@ else:
 st.markdown("---")
 st.caption("Développé pour la conservation de la faune sauvage au Gabon 🇬🇦 | Données : Copernicus Sentinel-2"
            " | Traitement : Google Earth Engine | Interface : Streamlit by Dieudonné Gabla")
+
 
 
